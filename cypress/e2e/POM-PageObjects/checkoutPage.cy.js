@@ -27,6 +27,11 @@ class CheckoutPage {
     get finishButton() {
       return cy.get('[data-test="finish"]');
     }
+
+    get continueShopping()
+    {
+      return cy.get("#continue-shopping");
+    }
   
     // Define methods to interact with elements
     goToCart() {

@@ -244,5 +244,21 @@ describe("Test Suit for items page",()=>
                         OrderCompletionPage.verifyOrderCompletion();
             
                        
-                    })     
+                    })  
+                    
+            it("verify continue shopping button",()=>
+            {
+                const ln= new LoginPage();
+                ln.LogintoURl();
+                ln.setUserName("standard_user");
+                ln.setPassWord("secret_sauce");
+                ln.clickSubmit();
+                ln.verifyLogin();
+                pn.addtoCart(1);
+                checkoutPage.goToCart();
+                checkoutPage.continueShopping.click();
+                ln.verifyLogin();
+                cy.url().should('eq','https://www.saucedemo.com/inventory.html')
+
+            })
 })
